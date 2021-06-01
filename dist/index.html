@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Weather-app</title>
+</head>
+<body>
+    <div class="search-container">
+        <div class="input-group mb-3">
+            <input id="input-text"type="text" class="form-control" placeholder="search country" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
+         
+        </div>
+    </div>
+    <div id="container"></div>
+    <button class="btn btn-outline-secondary" type="button" id="load-btn">Load</button>
+
+    <script id="weather-template" type="text/x-handlebars-template">
+        {{#each cities}}
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+                    <div class="card p-4">
+                        <div class="d-flex">
+                            <h6 class="flex-grow-1">{{name}}</h6>
+                        </div>
+                        <div class="d-flex flex-column temp mt-5 mb-3">
+                            <h1 class="mb-0 font-weight-bold" id="heading"> {{temperature}}</h1> <span class="small grey">condition</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="temp-details flex-grow-1">
+                                <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span> 84% </span> </p>
+                                <p class="my-1"> <img src="https://i.imgur.com/wGSJ8C5.png" height="17px"> <span> 0.2h </span> </p>
+                                <button class="remove-item-btn" data-name={{name}}>remove</button>
+                                <button  class="add-item-btn" data-name={{name}}>add</button>
+                            </div>
+                            <div> <img src="http://openweathermap.org/img/w/{{condtionPic}}.png"width="100px"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        {{/each}}
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script> -->
+    <!-- <script src="/jquery/dist/jquery.js"></script> -->
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="render.js"></script>
+    <script src="logic.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
