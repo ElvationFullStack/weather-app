@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/', api)
 
 const port = 3001
-app.listen(process.env.Port || port, function () {
+app.listen(process.env.PORT || port, function () {
     console.log("server is listening on port " + port)
 })
 
