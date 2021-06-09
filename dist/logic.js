@@ -1,6 +1,7 @@
 class Weather {
     constructor() {
         this.cityData = [];
+        this.inputText = $('#input-text');
     }
 
     getDataFromDB() {
@@ -17,14 +18,12 @@ class Weather {
 
     }
     async getCityData(city) {
-
         return $.ajax({
             method: "GET",
             url: `/city/${city}`,
             success: (response) => {
+                this.cityData.push(response)
                 return response;
-                // this.cityData.push(response)
-
             }
         })
 
@@ -42,7 +41,6 @@ class Weather {
     }
 
     async removeCity(city) {
-
         return $.ajax({
             method: "DELETE",
             url: `/city/${city}`,

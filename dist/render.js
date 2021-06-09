@@ -6,7 +6,6 @@ this.template=Handlebars.compile(this.source)
 }
 
 renderData=function(cities){
-    console.log("_________citie___",cities)
     this.container_element.html('');
     const newHTML=this.template({cities});
     this.container_element.append(newHTML);
