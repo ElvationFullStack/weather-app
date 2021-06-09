@@ -10,7 +10,7 @@
     <title>Weather-app</title>
 </head>
 <body>
-    <div class="search-container">
+    <div id="search-controler"class="  search-container w-50  d-flex justify-content-center">
         <div class="input-group mb-3">
             <input id="input-text"type="text" class="form-control" placeholder="search country" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
@@ -20,9 +20,9 @@
     <div id="container"></div>
     <script id="weather-template" type="text/x-handlebars-template">
         {{#each cities}}
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+        <div class="container-fluid ">
+            <div class="row justify-content-center ">
+                <div  class="col-12 col-md-4 col-sm-12 col-xs-12">
                     <div class="card p-4">
                         <div class="d-flex">
                             <h6 class="flex-grow-1">{{name}}</h6>
@@ -34,8 +34,8 @@
                             <div class="temp-details flex-grow-1">
                                 <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span> 84% </span> </p>
                                 <p class="my-1"> <img src="https://i.imgur.com/wGSJ8C5.png" height="17px"> <span> 0.2h </span> </p>
-                                <button class="remove-item-btn" data-name={{name}}>remove</button>
-                                <button  class="add-item-btn" data-name={{name}}>add</button>
+                                <button  class="btn-outline-danger btn remove-item-btn" data-name={{name}}  type="submit">remove</button>
+                                <button  class="btn  btn-success add-item-btn" data-name={{name}}>add</button>
                             </div>
                             <div> <img src="http://openweathermap.org/img/w/{{condtionPic}}.png"width="100px"> </div>
                         </div>

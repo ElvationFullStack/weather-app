@@ -1,0 +1,12 @@
+#search-controler{
+      margin: 0 auto;
+
+}
+body{
+    background-image: url('./sky.jpg');
+    box-sizing: border-box;
+}
+.card{
+    background-image: url('./cool-background.png');
+    box-sizing: border-box;
+}
